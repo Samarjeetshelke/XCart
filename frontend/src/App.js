@@ -1,10 +1,21 @@
+import { Container } from 'react-bootstrap';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
-      <h1>Hello There!</h1>
-    </div>
+    <>
+      
+      <Header/>
+      <main className='py-4'>
+        <Container>
+          <h1>XCart</h1>
+        </Container>
+        
+      </main>
+      <Footer/>
+    </>
   );
 }
 
