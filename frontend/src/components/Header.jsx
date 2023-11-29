@@ -10,7 +10,7 @@ const Header = () => {
         <Container>
             <Navbar.Brand href='/'>
             <img src={logo}  alt="logo"/>
-            XCart
+            Cart
             
             </Navbar.Brand>
             <Navbar.Toggle aria-controls='basic-navbar-nav'/>
