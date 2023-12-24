@@ -1,15 +1,28 @@
 
 import { useParams } from 'react-router-dom'
+import {useEffect,useState} from 'react'
 import React from 'react'
-import products from '../products'
+import axios from 'axios'
+//import products from '../products'//we used to use it for feaching daat from file but form now we are fetching backend
 import {Link} from 'react-router-dom'
 import Rating from '../components/Rating'
 import {Row, Col,Image,ListGroup,Card,Button} from 'react-bootstrap'
 
 
 function ProductScreen() {
+
+    const [product ,setProduct] = useState({});
     const {id:productId} = useParams();
-    const product = products.find((p)=>p._id === productId)
+    //const product = products.find((p)=>p._id === productId)
+
+    useEffect(()=>{
+        const fetchData = async()=>{
+            const {data} = await axios.get(`/api/products/${productId}`);
+            setProduct(data);
+        }
+        fetchData();
+    },[productId]);
+    
     //id:productId renaming id to productId
   return (
     <>
